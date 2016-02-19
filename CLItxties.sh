@@ -2,7 +2,7 @@
 
 # quickly post something to http://txti.es
 
-# Required: curl, lynx
+# Required: curl, lynx, nano
 
 # create temporary file
 TempFile="cl_txti"`date +%s-%N`
