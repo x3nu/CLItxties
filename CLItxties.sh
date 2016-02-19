@@ -65,6 +65,8 @@ elif [ "$1" = "-f" ]; then
 	done
 elif [ "$*" = "" ]; then
     cat <<EOF
+CLItexties - Post to txti.es from the commandline
+
 Usage:
     CLItxties.sh -i (enter content and custom url/editcode interactively)
     CLItxties.sh -f [path-to-file] [custom url] [custom edit code] (post contents of file)
