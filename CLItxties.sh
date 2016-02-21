@@ -1,6 +1,6 @@
 #!/bin/bash
 # quickly post something to http://txti.es
-# Required: curl, lynx, $EDITOR
+# Required: curl, lynx, nano
 
 # create temporary file
 TempFile=`date +%s-%N`"-cl_txti.md"
@@ -8,7 +8,7 @@ touch /tmp/$TempFile
 
 # get input either interactivly or via arguments
 if [ "$1" = "-i" ]; then
-	$EDITOR /tmp/$TempFile
+	nano /tmp/$TempFile
 	content=$(</tmp/$TempFile)
 	rm /tmp/$TempFile
 	echo -n "Custom URL: "
