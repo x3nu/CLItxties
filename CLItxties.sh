@@ -1,6 +1,15 @@
 #!/bin/bash
-# quickly post something to http://txti.es
+#
+# CLItxties - quickly post something to http://txti.es
+#
+# Authors:
+# https://github.com/x3nu
+# https://github.com/parazyd
+#
+# Link: https://github.com/x3nu/CLItexties
+#
 # Required: curl, lynx, nano
+
 
 # create temporary file
 TempFile=`date +%s-%N`"-cl_txti.md"
