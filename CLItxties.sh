@@ -1,5 +1,5 @@
-#!/bin/bash
-#
+#!/bin/sh
+
 # CLItxties - quickly post something to http://txti.es
 #
 # Authors:
