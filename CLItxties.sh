@@ -35,19 +35,19 @@ curl -s --data-urlencode "content=$content" \
     --data "&custom_url=$custom_url&custom_edit_code=$custom_edit_code&form_level=2&submit=Save%20and%20done" \
         http://txti.es \
     | lynx -nostatus -stdin -dump -nolist \
-    | grep -q "already exists" 
+    | grep -q "already exists"
 
 # if URL does already exist, get a new one interactivly or produce random one
 if [ "$1" = "-i" ]; then
 	while [ $? -eq 0 ]
 	do
-	   	echo -n "This url (\"$custom_url\") is already in use, please choose a new one: "      
+	   	echo -n "This url (\"$custom_url\") is already in use, please choose a new one: "
 	   	read custom_url
 	   	curl -s --data-urlencode "content=$content" --data \
             "&custom_url=$custom_url&custom_edit_code=$custom_edit_code&form_level=2&submit=Save%20and%20done" \
                 http://txti.es \
             | lynx -nostatus -stdin -dump -nolist \
-            | grep -q "already exists" 
+            | grep -q "already exists"
 
 	  	if [ $? -eq 1 ]; then
 	  		echo "Your post is online at: http://txti.es/$custom_url"
@@ -65,7 +65,7 @@ elif [ "$1" = "-f" ]; then
                 "&custom_url=$rnd_url&custom_edit_code=$custom_edit_code&form_level=2&submit=Save%20and%20done" \
                 http://txti.es \
             | lynx -nostatus -stdin -dump -nolist \
-            | grep -q "already exists" 
+            | grep -q "already exists"
 
 	  	if [ $? -eq 1 ]; then
 	  		echo "http://txti.es/$rnd_url $custom_edit_code"
