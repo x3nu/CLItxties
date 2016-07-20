@@ -14,4 +14,4 @@ If you used `MyCoolPost` as customized URL you'll find your post at `http://txti
 
 * `curl`
 * `lynx`
-* `nano`
+* `nano` (unless you change it to some other editor)
