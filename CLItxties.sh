@@ -13,7 +13,30 @@
 # configuration
 EDITOR=nano
 
-# create temporary file
+# constants
+URL='http://txti.es'
+
+# parameters:
+# $1 - the content
+# $2 - the url
+# $3 - the edit code
+clitxties_post() {
+    local data_urlencode
+    local data
+
+    dataurlencode="content=${1}"
+    data="&custom_url=${2}"
+    data="${data}&custom_edit_code=${3}"
+    data="${data}&form_level=2&submit=Save%20and%20done"
+
+    curl -s --data-urlencode "$data_urlencode" --data "$data" "$URL" \
+        | lynx -nostatus -stdin -dump -nolist \
+        | grep -q "already exists"
+
+    return $?
+}
+
+# create a temporary file
 TempFile=`date +%s-%N`"-cl_txti.md"
 touch /tmp/$TempFile
 
@@ -33,11 +56,7 @@ elif [ "$1" = "-f" ]; then
 fi
 
 # try to post and check if URL already exists
-curl -s --data-urlencode "content=$content" \
-    --data "&custom_url=$custom_url&custom_edit_code=$custom_edit_code&form_level=2&submit=Save%20and%20done" \
-    http://txti.es \
-    | lynx -nostatus -stdin -dump -nolist \
-    | grep -q "already exists"
+clitxties_post $content $custom_url $custom_edit_code
 
 # if URL does already exist, get a new one interactivly or produce random one
 if [ "$1" = "-i" ]; then
