@@ -8,17 +8,17 @@ Post to [txti.es](txti.es) from the command line.
       -e editor use a different editor instead of the default nano(1)
       -f file   get the content from a file
       -h        print this usage and exit
-      -i        enter the content, the url and the edit code interactively
-      -r        use a randomly generated url
+      -i        enter the content, the URL and the edit code interactively
+      -r        use a randomly generated URL
       -s        take input from the stdin
 
 ## Examples
 
-* Enter the content, the custom url and the edit code interactivly:
+* Enter the content, the custom URL and the edit code interactively:
 
         ./CLItxties.sh -i
 
-* Post a content from a file to a random url interactively:
+* Post a content from a file to a random URL interactively:
 
         ./CLItxties.sh -i -f file.txt -r
 
