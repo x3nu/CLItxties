@@ -1,6 +1,6 @@
 # CLItexties
 
-Post to [txti.es](txti.es) from the command line.
+Post to [txti.es](http://txti.es) from the command line.
 
 ## Usage
 
